@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+</head>
+<body>
+    <figure style="border: 2px solid green;">
+        <img src="ankit.jpg" alt="prasad" height="200"
+    width="400"/>
+    <figcaption >ankit and vishal</figcaption>
+    </figure>
+    <form>
+        <div>
+            <label for="">username</label>
+            <br>
+            <input type="text" id="username" required placeholder="user name" autofocus>
+        </div>
+        <div>
+            <label for="password">password</label>
+            <br>
+            <input type="password" id="password" required>
+        </div>
+        <div>
+            <input type="submit">
+            <input type="reset">
+
+        </div>
+
+
+
+        <div>
+            <label>username:</label>
+    
+            <input type="range" ma="50" min="0" value="100" id="usename" required>
+        </div>
+
+        <div>
+            <label for="country">country</label>
+            <br>
+            <input typ="country" name="country" value="india" id="country">
+        </div>
+
+        <div>
+            <label for="textarea"  >textarea</label>
+            <br>
+            <textarea id="textarea">this is textarea</textarea>
+        </div>
+
+
+        <div>
+            <p>cout done</p>
+            <input type="radio" name="course" ><label for="c++">c++</label>
+            <br>
+            <input type="radio" name="course" >java
+            <br>
+            <input type="radio" name="noghing" 
+            >wev
+            <br>
+        </div>
+
+        <select name="month_selected" multiple>
+            <optgroup label="2022">
+                <option>apr</option>
+            <option>june</option>
+            <option>oct</option>
+
+            </optgroup>
+            <option>jan</option>
+            <option>feb</option>
+            <option>mar</option>
+        </select>
+        <div>
+            Image:<input type="file" name="image">
+        </div>
+    </form>
+
+
+    <audio controls>
+        <source src="static/audio.ogg" type="adio">
+
+    </audio>
+    <br>
+        <video height="200" width="200" autoplay controls>
+            <source src="static/video.mp4">
+        </video>
+    
+    
+</body>
+</html>
