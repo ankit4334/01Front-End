@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="firstnum">
+    <input type="number" id="secondnum">
+
+
+
+    <button onclick="add()">+</button>
+    
+    <br>
+    Result:<label id="result"></label>
+    
+    
+</body>
+
+<script>
+
+function add(){
+    var firstn=document.querySelector('#firstnum');
+    var secondn=document.querySelector('#secondnum');
+    var result=document.querySelector('#result');
+
+    
+        var r=parseInt(firstn.value)+parseInt(secondn.value);
+        result.innerText=r;
+
+    }
+</script>
+</html>
+
+
+
