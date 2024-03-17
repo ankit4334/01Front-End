@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        #outer1{
+            height: 1000px;
+            width: 500px;
+            background-color:red;
+            
+
+    
+        }
+        #inner{
+            height: 500px;
+            width: 250px;
+            background-color:yellowgreen;
+            margin-top: 50px;
+            margin-left: 50px;
+            margin-bottom: 50px;
+            margin-right: 50px;
+            color: brown;
+            padding: 50px;
+
+
+        }
+
+        #outer2{
+            height: 500px;
+            width: 250px;
+            background-color:navy;
+            margin-top: 50px;
+            margin-left: 50px;
+            margin-bottom: 50px;
+            margin-right: 50px;
+
+    
+        }
+
+        .bg{
+            width: 500px;
+            height: 250px;
+            border: 2px solid gray; 
+            font-size: 22px;
+            padding: 5px;
+            background-image: url('image1.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+
+        }
+
+
+        .shadow{
+            height: 400px;
+            width:400px;
+            font-size: 50px;
+            color: gold;
+            text-align: center;
+            padding: auto;
+            background:rgba(200,100,0.9);
+            box-shadow: 10px 0px 10px 5px cornflowerblue;
+
+        }
+        #t{
+            width:300px;
+            height:300px;
+            border: 2px solid green;
+            margin: auto;
+            transform:skew(10deg,10deg);
+            transform: rotate(70deg);
+        }
+
+        .col-1{
+            width:100px;
+            height: 100px;
+            border:2px solid black;
+            float:left;
+            text-align: center;
+            font-size: 10px;
+            background:red;
+           
+        }
+        .col-2{
+            width:100px;
+            height: 100px;
+            border:2px solid black;
+            float:left;
+            text-align: center;
+            font-size: 10px;
+            position: absolute;
+            top:2900px;
+            left: 100px;
+            background:green;
+        }
+        .col-3{
+            width:100px;
+            height: 100px;
+            border:2px solid black;
+            float:left;
+            text-align: center;
+            font-size: 10px;
+            background:pink;
+            position: relative;
+            top:50px;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Margin Property</h1>
+    <div id="outer1">
+        <div id="inner">
+<p>padding use in inter obeject</p>
+        </div>
+    </div>
+<div id="outer2">
+
+</div>
+
+<h1>Backgroud Image</h1>
+<div class="bg">
+    <P>Lorem ipsum dolor sit amet, consectetur
+     adipisicing elit. Perferendis non excepturi 
+     laboriosam, distinctio incidunt, dolorem 
+     laborum vero sapiente quod ipsum eos optio 
+     saepe in autem vel voluptate 
+    minima explicabo voluptatibus!
+    </P>
+</div>
+
+<h1>Box shadow in css</h1>
+<div class="shadow">Hi this Box shadow</div>
+
+<h1>transform property in css</h1>
+<div id="t">transform</div>
+
+<h1>This is position property</h1>
+<div style="height: 500px ;width: 500px;">
+<div class="col-1"><h1>1</h1></div>
+<div class="col-2"><h1>2</h1></div>
+<div class="col-3"><h1>3</h1></div>
+</div>
+</body>
+
+
+</html>

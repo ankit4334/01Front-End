@@ -1,0 +1,115 @@
+<!--
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Animation</title>
+    <style>
+        .box-container{
+            width: 600px;
+            height: 600px;
+            border: 2px solid black;
+            margin: auto;
+            position: relative;
+
+
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background:red;
+            position: absolute;
+            top:0px;
+            left: 0px;
+            animation-name: box;
+            animation-duration: 5s;
+            animation-delay: 2s;
+            animation-iteration-count: 2;
+
+            
+        }
+
+        @keyframes box{
+            0%{
+                top: 0px;
+                left: 0px;
+                background:red;
+
+            }
+            25%{
+                top:0px;
+                left:400px;
+                background:green;
+            }
+            50%{
+                top:400px;
+                left:400px;
+                background:yellow;
+            }
+            75%{
+                top:400px;
+                left:0px;
+                background:blue;
+            }
+            100%{
+                top: 0px;
+                left: 0px;
+                background:red;
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box-container">
+        <div class="box"></div>
+    </div>
+</body>
+</html>
+-->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Animation time function</title>
+    <style>
+        .container-box{
+            width: 700px;
+            height: 150px;
+            border: 2px solid greenyellow;
+            margin: 50px auto;
+            position: relative;
+        }
+        .box{
+            width: 200px;
+            height: 100px;
+            margin-top:20px ;
+            background: red;
+            animation: box 4s;
+            position: absolute;
+            animation-timing-function: linear;
+        }
+
+       @keyframes box{
+        from{
+            left:0px;
+        }
+        to{
+            left:500px;
+        }
+       }
+    </style>
+</head>
+<body>
+    <div class="container-box">
+        <div class="box">linear</div>
+    </div>
+</body>
+</html>

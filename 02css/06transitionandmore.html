@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .main{
+            width: 100px;
+            height: 100px;
+            background:rgba(200,10,0.7);
+        }
+        .main:hover{
+            background:rgba(200,100,0.7);
+
+            transition:4s;
+        }
+        .box{
+            height: 500px;
+            width:500px;
+            border: 2px gray solid;
+            margin: auto;
+            position: relative;
+        
+            
+
+        }
+        .add{
+            width:100%;
+            font-size: 30px;
+            color:white;
+            background:rgba(0,0,0,0.6);
+            position:absolute;
+            left:0px;
+            bottom: -40px;
+            opacity: 0;
+            transition: 1s;
+
+        }
+        .box:hover .add{
+            bottom: 0px;
+            opacity: 1;
+
+        }
+        span{
+            color:red;
+            display: block;
+        }
+        h1{
+            color:blue;
+             
+        }
+
+
+        .inl{
+            width: 500px;
+            height: 500px;
+            border:2px solid green;
+            margin: auto;
+            
+        }
+        h2{
+            display: inline-block;
+        }
+        
+        .resize{
+            width:200px;
+            height: 200px;
+            border :2px solid red;
+            overflow: hidden;
+            resize: vertical;
+            text-indent: 40px;
+
+        }
+    </style>  
+</head>
+<body>
+    <div class="main"></div>
+
+
+    <h1>Add to card button pop up</h1>
+    <div class="box">
+        <img src="image1.png" alt="" width="100%" height="100%">
+        <input type="button" name="" value="Add To Card" class="add">
+    </div>
+
+    <h1>Now we learn  None,block and inline</h1>
+    <div>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur
+            adipisicing<h1>hello Everyone</h1><span>Hey this is ankit</span> Autem laborum exercitationem,
+            oluptatibus nesciunt architecto minima debitis.
+             Eveniet quis minima rem.
+        </p>
+    </div>
+
+    <div class="inl">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.<h2>Hey this is display</h2> Perspiciatis beatae quas nobis quaerat quos mollitia, iste esse voluptate quasi, perferendis consequuntur sapiente animi minus eum harum itaque error culpa consequatur.
+    </div>
+     
+
+    <div class="resize">
+        Lorem ipsum, dolor sit amet consectetur adipisicing 
+        elit. Facere incidunt tenetur, cupiditate officiis 
+        vitae excepturi at facilis, minus voluptatem nihil 
+        perspiciatis quidem, earum aliquam fuga! Harum exercitationem
+         vitae non eaque molestiae hic minima asperiores? Facilis atque 
+         pariatur ea aliquid natus.
+    </div>
+</body>
+</html>
