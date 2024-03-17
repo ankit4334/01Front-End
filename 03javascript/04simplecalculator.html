@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+    <input type="number"  name="first" id="first" step="any">
+    <select name="" id="ope">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+        <input type="number"  name="second" id="second" step="any">
+        <br>
+        <button onclick="cal()">
+            Calculate
+        </button>
+        <input type="number" id="res" readonly="">
+
+    </select>
+    
+</body>
+<script>
+    function cal(){
+        var opr1=document.getElementById('first').value;
+        var opr2=document.getElementById('second').value;
+        var ope=document.getElementById('ope').value;
+
+         //alert(opr1);
+         //alert(opr2);
+         //alert(ope);
+
+         if(ope=='+'){
+            var r=parseInt(opr1)+parseInt(opr2);
+         }
+
+         if(ope=='-'){
+            var r=parseInt(opr1)-parseInt(opr2);
+         }
+
+         if(ope=='*'){
+            var r=parseInt(opr1)*parseInt(opr2);
+         }
+
+         if(ope=='/'){
+            var r=parseInt(opr1)/parseInt(opr2);
+         }
+         
+         if(ope=='%'){
+            var r=parseInt(opr1)%parseInt(opr2);
+         }
+
+         document.getElementById('res').value=r;
+
+    }
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>simeple calculator</title>
+</head>
+<body>
+
+    First:<input type="number" id="f">
+    <select name="" id="se">
+
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+
+    </select>
+
+    Second:<input type="number" id="s">
+    ==
+    <button onclick="cal()">cal</button>
+    Result:<input type="number" id="re" readonly>
+
+    
+</body>
+
+     <script>
+       
+       function cal(){
+
+       
+        var first=document.getElementById('f').value;
+       var second=document.getElementById('s').value;
+       var ope=document.getElementById('se').value;
+
+       var r;
+
+       switch(ope){
+         
+        case '+':
+            r=parseInt(first)+parseInt(second);
+            break;
+
+        case '-':
+            r=parseInt(first)-parseInt(second);
+            break;
+
+        case '*':
+            r=parseInt(first)*parseInt(second);
+            break;
+
+
+        case '/':
+            r=parseInt(first)/parseInt(second);
+            break;
+
+
+
+       }
+
+       document.getElementById('re').value=r;
+       
+
+
+       }
+
+     </script>
+
+
+</html>
+
+
+
+-->
