@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>time</title>
+</head>
+<body>
+    <button onclick="test()">setInterval</button>
+    <button onclick="pest()">settimeout</button>
+
+    <!--clear timeout-->
+
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+
+    <!--for clear interval-->
+
+    <h1 id="h1"></h1>
+   
+    <button onclick="CountStop()">CountStop</button>
+
+
+    
+</body>
+<script>
+function test(){
+    setInterval(function(){
+        alert("hi this is ankit");
+    },2500)
+    
+}
+
+
+function pest(){
+    setTimeout(function(){
+      alert("every thing is good");
+    },4000)
+}
+
+
+//clear time out
+
+
+
+function start(){
+
+    var my=setTimeout(
+    function(){
+ 
+        document.write("<h1>Hi Ankit</h1>")
+
+    },5000
+);
+
+}
+
+function stop(){
+    clearTimeout(my);
+    alert("timeout stopped");
+
+}
+
+
+
+//clear interval method 
+
+var my=setInterval(count,1000);
+var c=0;
+
+function count(){
+    document.getElementById('h1').innerHTML=c;
+    c++;
+
+    }
+
+    function CountStop(){
+        clearInterval(my);
+    }
+
+</script>
+</html>

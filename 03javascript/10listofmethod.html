@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>List of methods</title>
+</head>
+<body>
+    <h1 id="res"></h1>
+
+    <button onclick="getDate()">Date</button>
+    <button onclick="year()">Year</button>
+    <button onclick="month()">Month</button>
+
+    <button onclick="toDate()">Date</button>
+    <button onclick="hour()">hour</button>
+    <button onclick="minuts()">Minute</button>
+
+    <button onclick="time()">Time</button>
+
+    <button onclick="millis()">millisecond</button>
+
+</body>
+<script>
+    //list of methods
+    /*
+    1.Date()->get the current date and time details
+    2.getFullYear()->year as a four digir number(yyyy)
+    3.getMonth()->get the month as a number(0-11)
+    4.getDate()->day as a number  (1-31)
+    5.getHourse()->get the hour(0-23)
+    6.getMinutes()->get the minute(0-59)
+    7.getSecond()->get the second(0-59)
+    8.getMilliseconds()->get the millisecond(0-999)
+    9.getTime()->get the time(millisecons since january1,1970)
+    10.getDay()->get the weekday as a number(0-6)
+
+    */
+var date=new Date();
+function getDate(){
+    document.getElementById('res').innerHTML=date;
+}
+
+function year(){
+    document.getElementById('res').innerHTML=date.getFullYear();
+
+}
+
+function month(){
+
+    var month=[
+        "january","february","march",
+        "april","may","june","july",
+        "august","september","october",
+        "novembber","december"
+
+    ];
+
+    document.getElementById('res').innerHTML=month[date.getMonth()];
+
+}
+
+
+function toDate(){
+    document.getElementById('res').innerHTML=date.getDate();
+
+}
+
+
+function hour(){
+    document.getElementById('res').innerHTML=date.getHours();
+
+}
+
+
+function minuts(){
+    document.getElementById('res').innerHTML=date.getMinutes();
+
+}
+
+
+function time(){
+    document.getElementById('res').innerHTML=date.getTime();
+
+}
+
+
+function millis(){
+    document.getElementById('res').innerHTML=date.getMilliseconds();
+
+}
+
+</script>
+</html>
