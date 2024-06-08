@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>getAttribute and setAttribute</title>
+    <style type="text/css">
+      
+      .red{
+        color: red;
+      }
+      .blue{
+        color: blue;
+
+      }
+
+    </style>
+</head>
+<body>
+
+    <div id="test" class="red">Hello Everyone</div>
+     
+    <button onclick="testing()">click</button>
+
+    <h1 id="res"></h1>
+</body>
+
+<script>
+    var tes=document.getElementById('test');
+
+function testing(){
+
+    var cls=tes.getAttribute("class");
+
+   // document.getElementById('res').innerText=cls;
+
+
+   if(cls=="red"){
+
+    tes.setAttribure("class","blue");
+
+   }
+   else{
+    tes.setAttribute("class","red");
+   }
+
+}
+
+</script>
+
+</html>
