@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Animation</title>
+    <style>
+        .yellow{
+            width:420px;
+            height: 420px;
+            background: yellow;
+            position: relative;
+            margin: 5px;
+        }
+        #red{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position:absolute;
+            top:0px;
+            left:0px;
+
+        }
+    </style>
+</head>
+<body>
+    <button onclick="move()">click</button>
+    <div class="yellow">
+        <div id="red"></div>
+    </div>
+</body>
+<script>
+    function move(){
+        var red=document.getElementById('red');
+        var poe=0;
+        var anim=setInterval(animate,5);
+
+        function animate(){
+            if(poe==370){
+                clearInterval(anim);
+            }else{
+
+            poe++;
+            red.style.top=poe+"px";
+            red.style.left=poe+"px";
+
+            }
+
+           
+        }
+    }
+</script>
+</html>
