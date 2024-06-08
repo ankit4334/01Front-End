@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Math object</title>
+</head>
+<body>
+  <button onclick="math()">Math</button> 
+  <h1 id="res"></h1> 
+
+  <button onclick="getOPT()">OPT</button>
+</body>
+<script>
+    /*
+    //math object methods.
+    1.Math.PI->return the value of pi
+    2.Math.round(x)->rounded value of x
+    3.Math.pow(x,y)->return the value of x to the power y
+    4.Math.sqrt(x)->return square root of x
+    5.Math.abs(-x)->return positive value of x
+    6.Math.ceil(x)->up nearest integer
+    7.Math.floor(x)->douwn nearest integer
+    8.Math.random->return random decimal value in between 0 and1
+    9.Math.mix(x,y,z)->retun min value of three
+    10.Math.max(x,y,z)->retun max value of three
+*/
+
+function math(){
+    var x=2;
+    var y=3;
+    var z=Math.pow(x,y);
+    document.getElementById('res').innerHTML=z;
+}
+
+//use of math.random for get otp
+
+function getOPT(){
+    var x=Math.random()*10000;
+    alert(x);
+    var opt=Math.floor(x);
+    document.write(opt);
+}
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>screen object</title>
+</head>
+<body>
+    <button onclick="availheight()">availheight</button>
+    <h1 id="res"></h1>
+</body>
+<Script>
+    /*
+    //window screen object
+    1.avaiHeight->return the height of screen(excluding the window taskbar)
+        syntax=screen.availHeight
+    2.availWidth-return widht
+        syntax=screen.availWidth
+
+    3.colorDepth->returns th ebit depth of the color palette for displaying images
+        syntax=screen.colorDepth
+
+    4.height->return the total height
+        syntax=screen.height
+
+    5.width->
+        syntax=screen.width
+
+    6.pixelDepth->
+        syntax=screen.pixelDepth
+
+        */
+
+        function availheight(){
+            var h=screen.availHeight;
+            document.getElementById('res').innerHTML=h;
+        }
+
+</Script>
+</html>

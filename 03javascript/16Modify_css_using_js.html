@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mofity css using js</title>
+<style>
+    #main{
+        color:red;
+        font-size: 50px;
+        text-align: center;
+        margin: 50px;
+        cursor: pointer;
+        transition:2s;
+    }
+</style>
+</head>
+<body>
+    <div id="main" onmouseenter="modify()" onmouseleave="unmodify()">Hi ankit</div>
+</body>
+<script>
+
+    function modify(){
+
+document.getElementById('main').style.fontSize="100px";
+document.getElementById('main').style.color="blue";
+document.getElementById('main').style.fontFamily="verdana";
+
+
+    }
+
+
+    
+    function unmodify(){
+
+document.getElementById('main').style.fontSize="50px";
+document.getElementById('main').style.color="green";
+
+    }
+</script>
+</html>

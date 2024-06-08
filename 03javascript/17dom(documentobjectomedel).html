@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Dom</title>
+
+
+</head>
+<body>
+    <button onclick="openWin()">Open in new tab</button>
+    <button onclick="closeWin()">close in new tab</button>
+
+</body>
+<script>
+    //open something in new window
+    var win;
+function openWin(){
+    win=window.open("https://www.wscubetech.com","width=500px","height=500px");
+}
+
+function closeWin(){
+win.close();
+}
+</script>
+</html>
