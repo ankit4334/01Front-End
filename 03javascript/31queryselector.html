@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>QuerySelector</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;;
+}
+
+body{
+    font-family: arial;
+
+}
+header{
+    background-color: green;
+    color:white;
+    padding:15px 0px 20px 40px;
+
+}
+
+
+h2#header-title{
+    padding:10px 0px;
+}
+
+div#content{
+    padding: 15px 0px 0px 45px;
+}
+
+div#content > h4{
+    border-bottom: 2px solid green;
+    padding: 0px 20px 10px 5px;
+    display: inline-block;
+    width: 50%;
+}
+
+li.list-item{
+    border-bottom: 1px solid gray;
+    padding:10px 0px;
+
+}
+
+form{
+    padding-top:20px;
+}
+
+
+form >input,button{
+    padding:5px;
+
+}
+  
+
+</style>
+</head>
+<body>
+
+    <header id="header">
+        <h2 id="header-title">ankit</h2>
+        <p id="tegline">Computer Educator</p>
+    </header>
+
+    <div id="content">
+        <h4>Courses</h4>
+    
+
+    <ul id="items">
+        <li class="list-item">Graphics</li>
+        <li class="list-item">Web</li>
+        <li class="list-item">Video</li>
+        <li class="list-item">3D</li>
+
+    </ul>
+    <form action="">
+        <input type="text">
+        <input type="submit">
+    </form>
+
+
+    </div>
+    <script src="31javascript.js"></script>
+    
+</body>
+
+<script>
+
+
+
+
+
+
+/*
+//1.use of document.getElementByid
+var a=document.getElementById('header-title');
+a.textContent="hello";
+
+var header=document.getElementById('header');
+header.style.borderBottom='10px solid yellow';
+
+*/
+
+
+
+/*
+//2.use of getElementsByClassName
+
+var item=document.getElementsByClassName('list-item');
+item[1].textContent='animation';
+item[1].style.fontWeight='bold';
+item[2].style.backgroundColor='red';
+
+//backgroudcolor for all element
+for(var i=0;i<item.length;i++){
+    item[i].style.backgroundColor='yellow';
+}
+
+*/
+
+
+
+//3.use of querySelector()
+//4.use of querySelectorAll()
+
+var headline=document.querySelector('#tegline');
+headline.style.color='red';
+
+
+var item=document.querySelector('.list-item');
+item.style.color='yellow';
+
+
+//diffrence querySelectorAll
+var it=document.querySelectorAll('.list-item');
+it[2].style.color='#923';
+
+
+//or
+//var item=document.querySelector('.list-item:nthe-child(3)');
+var item=document.querySelector('.list-item:last-child');
+item.style.color='blue';
+
+
+var odd=document.querySelectorAll('li:nth-child(odd)');
+
+for(var i=0;i<odd.length;i++){
+    odd[i].style.backgroundColor='#6655';
+}
+
+
+var input=document.querySelector('input');
+input.value='enter your name';
+
+
+var button=document.querySelector('input[type="submit"]');
+button.style.backgroundColor='red';
+button.style.color='yellow';
+button.value='Send';
+
+
+
+
+
+</script>
+
+</html>
