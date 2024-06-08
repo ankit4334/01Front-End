@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="txt">ankit kumar</h1>
+    <p id="para">rock bhai</p>
+    <h1 id="h2">click me</h1>
+
+
+    <h1 id="p">On</h1>
+    
+</body>
+<script>
+    let txt=document.getElementById('txt');
+    let para=document.getElementById('para');
+    txt.innerText='Chitakara!';
+    para.innerText='Welcome to chitkarauniversity!';
+
+    let ans=document.createElement("h2");
+    ans.innerText="ankit kumar";
+    document.body.append(ans);
+
+
+    const h=document.getElementById('h2');
+    h.addEventListener("click",function(){
+        h.innerText="random";
+    })
+
+
+    let p=documnet.getElementById('p');
+    p.addEventListener('click',function(){
+        if(p.innerText=="On"){
+            p.innerText="Of";
+        }
+        else{
+            p.innerText="On";
+        }
+    })
+
+
+</script>
+</html>

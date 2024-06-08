@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO APP</title>
+</head>
+<body>
+    <h1>TODO APP</h1>
+    <input type="text" id="input">
+    <div id="maindiv"></div>
+    
+</body>
+
+<script>
+
+let input=document.querySelector('#input');
+let maindiv=document.querySelector('#maindiv');
+let counter=1;
+let alltasks=[];
+
+input.addEventListener('keypress',(e)=>{
+
+    if(e.keyCode==13)
+    addTask();
+
+})
+
+const addTask=()=>{
+    let obj={};
+    obj.title=input.value;
+    obj.status='pending';
+    obj.id=counter;
+    counter++;
+
+    alltasks.push(obj);
+    storeLocalStorage();
+    addToUI(obj);
+    console.log(alltasks)
+
+
+}
+
+
+
+
+const addToUI=(obj)=>{
+
+    let div=document.createElement('div');
+    div.setAttribute("id",obj.id);
+    let span=document.createElement('span');
+    span.innerText=obj.title;
+    div.appendChild(span);
+
+
+    let chk=document.createElement('input');
+    chk.setAttribute("type","checkbox");
+    // div.appendChild(chk);
+
+    chk.addEventListener('click',()=>{
+        let status='';
+        if(chk.checked){
+            status='completed';
+        }
+        else{
+            status='pending';
+        }
+
+        alltasks=alltasks.map((item)=>{
+            if(item.id==obj.id){
+                item.status=status;
+            }
+            return item;
+        })
+
+        storeLocalStorage();
+    })
+    div.appendChild(chk);
+
+    let delbutton=document.createElement('button');
+    delbutton.innerHTML="Del";
+    delbutton.addEventListener('click',deleteTask);
+    div.appendChild(delbutton);
+
+    maindiv.append(div);
+    input.value="";
+    //console.log(maindiv);
+
+}
+
+const deleteTask=(e)=>{
+    let parent=e.target.parentNode;
+    let id=parent.getAttribute("id");
+    parent.remove();
+
+    alltasks=alltasks.filter((item)=>{
+        if(item.id!=id)
+        return true;
+    });
+    
+    storeLocalStorage();
+
+}
+
+
+
+
+const storeLocalStorage=()=>{
+    localStorage.setItem("mytasks",JSON.stringify(alltasks));
+}
+
+
+const fetchLocalStorage=()=>{
+    if(localStorage.getItem("mytasks")){
+        alltasks=JSON.parse(localStorage.getItem("mytasks"));
+    }
+    else{
+        alltasks=[];
+    }
+    alltasks.forEach((item)=>{
+        addToUI(item);
+    })
+}
+fetchLocalStorage();
+
+</script>
+
+</html>

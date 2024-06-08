@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        *{
+            margin:0px;
+            padding: 0px;
+            font-family: sans-serif;
+        }
+
+        form{
+            width: 500px;
+            margin: auto;
+            box-shadow: 0px 0px 10px 2px green;
+            padding: 10px;
+
+        }
+
+        form h2{
+            margin-left: 125px;
+            padding: 10px 0px;
+            color: blue;
+      
+        }
+
+        form label{
+            display: block;
+            font-size: 16px;
+
+        }
+
+        form input{
+            width: 500px;
+            height: 30px;
+            margin-bottom: 10px;
+
+        }
+
+        form button{
+            padding:10px 20px;
+            background-color: blueviolet;
+            color: rgb(18, 18, 18);
+            border: none;
+            cursor: pointer;
+        }
+
+        .main{
+            width: 1320px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+        }
+
+        .items{
+            flex-basis: 20%;
+            margin: 1%;
+            box-shadow: 0px 0px 10px 2px #ccc;
+            padding: 1px;
+            position: relative;
+        }
+
+        .items span{
+            position: absolute;
+            font-size: 30px;
+            cursor: pointer;
+            right: 0px;
+            top: 0px;
+        }
+
+        .items h5{
+            margin-top: 10px;
+        }
+
+        button{
+            display: table;
+            margin: auto;
+            
+        }
+        
+    </style>
+</head>
+<body>
+
+    <form action="">
+        <H2>LOGIN AND SINGUP</H2> 
+        <label for="">Name</label>
+        <input type="text" name="uname" required/>
+        <label for="">Email</label>
+        <input type="email" name="email" required>
+        <label for="">Phone</label>
+        <input type="text" name="phone" required>
+        <button>Save</button>
+    </form>
+
+    <button id="cAll">Clear All</button>
+
+    <div class="main">
+        <div class="items">
+            <span>&times;</span>
+            <h5>Name</h5>
+            <div>Abc</div>
+
+            <h5>Email</h5>
+            <div>abc@gmailcom</div>
+
+            <h5>Phone</h5>
+            <div>88888888</div>
+        </div>
+    </div>
+    
+</body>
+
+
+<script>
+
+ /*
+
+    //localStorage give localStorage object it fix
+    //by helf of this object you send the data and recieve 
+    //the data.
+    //setItem do variable leta hai 
+    //getItem ek variable leta hai
+
+    let  user=[
+        {
+            'name':'ankit',
+            'email':'ankit@123',
+
+        },
+        {
+            'name':'rocky',
+            'email':'rockyt@123',
+
+        }
+    ]
+    //localstorage me only single string jata 
+    //array or object bhejane ke liye json use kiya jata hai
+
+    //localStorage.setItem("name",user);  //this is not working.
+    
+    localStorage.setItem("name",JSON.stringify(user));
+    
+    //here JSON.parse data ko array ke form me dekhane ke 
+    //liye use kiya jata hai
+    let item=JSON.parse(localStorage.getItem("name"));
+    console.log(item);
+
+    */
+
+
+    /*
+    //underStanding splice
+    let l=[10,20,30,40];
+    l.splice(2,1); //index 2 se 1 data delete kar do
+    console.log(l);
+    */
+   
+    let form=document.querySelector('form'); //here target form
+    let main=document.querySelector('.main');  //here targer main div 
+    let cAll=document.querySelector('#cAll'); //here target button
+    form.addEventListener("submit",(event)=>{
+        
+        let name=event.target.uname.value; //it means form ke ander uname wala input ke value ko access karega.
+        // console.log(name);
+        let email=event.target.email.value;
+        let phone=event.target.phone.value;
+       //console.log(name,email,phone);
+
+       //it means userDetails me koi data hai to do otherwise black array.
+       let userData=JSON.parse(localStorage.getItem("userDetails")) ?? [];  
+       //console.log(userData);
+
+       //login of no duplicate data
+       let checkStatus=0;
+       for(let v of userData){
+        //console.log(v.email);
+        if(v.email==email || v.phone==phone){
+            checkStatus=1;
+            break;
+        }
+
+       } 
+       //console.log(checkStatus)
+
+       if(checkStatus==1){
+        alert("Email or phone all ready exiest");
+       }
+       else{
+
+        userData.push({
+        'name':name,
+        'email':email,
+        'phone':phone
+       })
+       //console.log(userData);
+
+       localStorage.setItem("userDetails",JSON.stringify(userData));
+       event.target.reset(); //loging page me data ko refeesh kar dega
+
+
+       }
+       
+
+        displayData();   //data with new entry
+
+        event.preventDefault(); //form not refresh page
+       
+    })
+
+
+
+    let displayData=()=>{
+        let userData=JSON.parse(localStorage.getItem("userDetails")) ?? [];  
+        //console.log(userData);
+
+        let finalData='';
+
+        userData.forEach((element,i)=>{
+           // console.log(element.name);
+           finalData+=`<div class="items">
+            <span onclick='removeData(${i})'>&times;</span>
+            <h5>Name</h5>
+            <div>${element.name}</div>
+
+            <h5>Email</h5>
+            <div>${element.email}</div>
+
+            <h5>Phone</h5>
+            <div>${element.phone}</div>
+        </div>`
+        });
+
+        //console.log(finalData);
+        main.innerHTML=finalData;
+
+
+    }
+
+
+
+    let removeData=(index)=>{
+        //alert(index);
+        let userData=JSON.parse(localStorage.getItem("userDetails")) ?? [];  
+        //console.log(userData);
+        userData.splice(index,1);
+        localStorage.setItem("userDetails",JSON.stringify(userData));
+        displayData(); //for delete and show refresh.
+    }
+
+    cAll.addEventListener("click",()=>{
+        localStorage.clear("userDetails");
+        displayData();  //means dubara display function call
+    })
+
+
+    displayData();
+
+
+</script>
+
+</html>
