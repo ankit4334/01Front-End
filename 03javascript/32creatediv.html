@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>QuerySelector</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;;
+}
+
+body{
+    font-family: arial;
+
+}
+header{
+    background-color: green;
+    color:white;
+    padding:15px 0px 20px 40px;
+
+}
+
+
+h2#header-title{
+    padding:10px 0px;
+}
+
+div#content{
+    padding: 15px 0px 0px 45px;
+}
+
+div#content > h4{
+    border-bottom: 2px solid green;
+    padding: 0px 20px 10px 5px;
+    display: inline-block;
+    width: 50%;
+}
+
+li.list-item{
+    border-bottom: 1px solid gray;
+    padding:10px 0px;
+
+}
+
+form{
+    padding-top:20px;
+}
+
+
+form >input,button{
+    padding:5px;
+
+}
+  
+
+</style>
+</head>
+<body>
+
+    <header id="header">
+        <h2 id="header-title">ankit</h2>
+        <p id="tegline">Computer Educator</p>
+    </header>
+
+    <div id="content">
+        <h4>Courses</h4>
+    
+
+    <ul id="items">
+        <li class="list-item">Graphics</li>
+        <li class="list-item">Web</li>
+        <li class="list-item">Video</li>
+        <li class="list-item">3D</li>
+
+    </ul>
+    <form action="">
+        <input type="text">
+        <input type="submit">
+    </form>
+
+
+    </div>
+    
+    
+</body>
+
+<script>
+
+//create div
+
+var newDiv=document.createElement('div');
+//console.log(newDiv);
+
+
+//add class
+newDiv.className='box';
+//console.log(newDiv);
+
+//add id
+newDiv.id='textbox';
+console.log(newDiv);
+
+
+//create text note
+var newDivText=document.createTextNode('Hi how are you');
+console.log(newDivText);
+
+
+//add text to div
+newDiv.appendChild(newDivText);
+
+
+
+
+//appen newDiv before the form
+
+var container=document.querySelector('#content');
+
+var form=document.querySelector('form');
+
+
+newDiv.style.color='red';
+container.insertBefore(newDiv,form);
+
+
+
+
+</script>
+
+</html>
