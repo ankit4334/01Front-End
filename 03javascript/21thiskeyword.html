@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>this keyword</title>
+</head>
+<body>
+    <br>
+    <button onclick="this.style.display='none'">Click me hide me</button>
+</body>
+<script>
+//     var x=this;
+//     document.write("<h1>"+x);
+
+    var person={
+        firstName:"ankit",
+        secondName:"kumar",
+        fullname:function(){
+            return this.firstName+this.secondName;
+        }
+    };
+
+    document.write("<h1>"+person.fullname());
+ </script>
+</html>
