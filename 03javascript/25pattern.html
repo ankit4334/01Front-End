@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>pattern</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var rows=prompt("please enter","");
+
+    //calling
+    printPattern(rows);
+    
+    //declare and define
+    function printPattern(){
+        for(var i=1;i<=rows;i++){
+            for(var j=1;j<=i;j++){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+
+        
+        for(var i=rows;i>=1;i--){
+            for(var j=1;j<=i;j++){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    
+
+    }
+
+    
+</script>
+</html>
